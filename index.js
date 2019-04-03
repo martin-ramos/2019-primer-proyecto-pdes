@@ -28,6 +28,20 @@ export class Golondrina {
     }
 }
 
+export const GolondrinasInmutables = {
+    crear(nombre, edad = 1, energia = 30) {
+        return {nombre, energia, edad}
+    },
+
+    volar(golondrina, km) {
+        return {...golondrina, energia: golondrina.energia - km * 3}    
+    },
+
+    comer(golondrina, gramos) {
+        return {...golondrina, energia: golondrina.energia + gramos * 2}    
+    }
+}
+
 // pepita.comer(3)
 // console.log(`La energia de pepita es: ${pepita.energia} despues de comer`)
 // pepita.volar(4)
